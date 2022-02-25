@@ -50,3 +50,7 @@ main img {
 .column {
     flex-direction: column;
 }
+
+.center-text {
+    text-align: center;
+}
