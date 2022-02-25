@@ -1,0 +1,52 @@
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 213, 0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(245, 204, 0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #001022 !important;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    margin: 0;
+}
+
+body {
+    padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+a,
+nav {
+    color: rgb(255, 213, 0) !important;
+}
+
+main img {
+    margin-block: 1rem;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.column {
+    flex-direction: column;
+}
