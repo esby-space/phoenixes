@@ -24,12 +24,14 @@ body {
     padding: 2rem;
 }
 
-h1,
-h2,
-h3,
 a,
-nav {
+nav,
+.accent {
     color: rgb(255, 213, 0) !important;
+}
+
+nav .dropdown-menu {
+    background-color: #001022;
 }
 
 main img {
