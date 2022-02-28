@@ -34,8 +34,9 @@ nav .dropdown-menu {
     background-color: #001022;
 }
 
-main img {
+img {
     margin-block: 1rem;
+    max-width: min(100%, 1000px) !important;
 }
 
 .navbar-nav {
