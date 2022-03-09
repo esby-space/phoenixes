@@ -39,6 +39,10 @@ img {
     max-width: min(100%, 1000px) !important;
 }
 
+#home-image img {
+    max-width: 600px !important;
+}
+
 .navbar-nav {
     margin-left: auto;
 }
