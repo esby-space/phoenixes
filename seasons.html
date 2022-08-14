@@ -22,6 +22,8 @@
     <title>Trinity Phoenixes</title>
     <link rel="shortcut icon" href="./images/phoenix.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/style.css" />
+
+    <script src="./js/seasons.js" defer></script>
 </head>
 
 <body>
@@ -55,13 +57,10 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://trinventory.herokuapp.com/">Trinventory</a>
+                            <a class="dropdown-item" href="#">Trinventory</a>
                             <a class="dropdown-item" href="#">Github Repo</a>
                             <a class="dropdown-item" href="#">Hacktrin</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./gallery.html" class="nav-link">Gallery</a>
                     </li>
                 </ul>
             </div>
@@ -71,14 +70,19 @@
     <main>
         <!-- Main Section -->
         <div class="container">
-            <div class="row">
+            <div id="section2022" class="row">
                 <h2 class="center-text">2022</h2>
+
+                <!-- NOTE: this section is automatically filled in under `./scripts/seasons.ts` -->
                 <div class="col">
                     <img src="./images/2022/competiton.jpg" alt="Our 2022 team at the competition"
                         class="rounded img-fluid">
                 </div>
                 <div class="col">
                     <img src="./images/2022/robot.png" alt="Our 2022 team's robot" class="rounded img-fluid">
+                </div>
+                <div class="col">
+                    <img src="./images/2022/team.jpg" alt="The 2022 team photo!" class="rounded img-fluid">
                 </div>
             </div>
         </div>
