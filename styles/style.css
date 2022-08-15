@@ -23,11 +23,11 @@ body {
     font-family: 'Roboto Mono', monospace;
     color: white;
     margin: 0;
-    overflow-x: none;
 }
 
 body {
     padding: 2rem;
+    overflow-x: hidden;
 }
 
 a,
