@@ -1,7 +1,5 @@
-# the Trinity Phoenixes website prototype
+# The Trinity Robotics Team Website!
 
-still under construction!
-- Moho - backend
-- Seabass - frontend
-- Lake - trinventory
+still underconstruction
+- built by Moho (backend) and Seabass (frontend)
 
