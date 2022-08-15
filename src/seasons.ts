@@ -21,3 +21,4 @@ const initGallery = () => {
 };
 
 initGallery();
+export {};
