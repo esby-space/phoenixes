@@ -34,10 +34,21 @@ const main = () => {
             y: 770,
             teeth: 10,
             inner: 230,
-            outer: 300,
+            outer: 290,
             angle: 9,
-            stroke: "rgb(255, 213, 0)",
+            fill: "rgb(255, 213, 0)",
             speed: -1,
+        }),
+
+        Gear({
+            x: 2610,
+            y: 770,
+            teeth: 10,
+            inner: 170,
+            outer: 230,
+            angle: 9,
+            fill: "#001022",
+            speed: 1,
         }),
 
         Gear({
@@ -45,10 +56,21 @@ const main = () => {
             y: 770,
             teeth: 10,
             inner: 230,
-            outer: 300,
+            outer: 290,
             angle: 9,
-            stroke: "rgb(255, 213, 0)",
+            fill: "rgb(255, 213, 0)",
             speed: -1,
+        }),
+        
+        Gear({
+            x: 590,
+            y: 770,
+            teeth: 10,
+            inner: 170,
+            outer: 230,
+            angle: 9,
+            fill: "#001022", 
+            speed: 1,
         }),
     ];
 
