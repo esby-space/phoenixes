@@ -23,11 +23,11 @@ body {
     font-family: 'Roboto Mono', monospace;
     color: white;
     margin: 0;
+    overflow-x: hidden;
 }
 
 body {
     padding: 2rem;
-    overflow-x: hidden;
 }
 
 a,
@@ -63,3 +63,8 @@ img {
 .center-text {
     text-align: center;
 }
+
+ul {
+    list-style: none;
+}
+
