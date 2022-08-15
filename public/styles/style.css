@@ -12,9 +12,14 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-color: #001022;
+    --text-accent: rgb(255, 213, 0);
+}
+
 html,
 body {
-    background-color: #001022 !important;
+    background-color: var(--background-color) !important;
     font-family: 'Roboto Mono', monospace;
     color: white;
     margin: 0;
@@ -27,20 +32,16 @@ body {
 a,
 nav,
 .accent {
-    color: rgb(255, 213, 0) !important;
+    color: var(--text-accent) !important;
 }
 
 nav .dropdown-menu {
-    background-color: #001022;
+    background-color: var(--background-color);
 }
 
 img {
     margin-block: 1rem;
     max-width: min(100%, 1000px) !important;
-}
-
-#home-image img {
-    max-width: 600px !important;
 }
 
 .navbar-nav {
