@@ -5,8 +5,8 @@ const main = () => {
     const context = canvas.getContext("2d");
     if (!context)
         throw "error creating context x_x";
-    context.lineWidth = 30;
     let gears = [
+        // center yellow gear
         Gear({
             x: 1600,
             y: 770,
@@ -17,16 +17,7 @@ const main = () => {
             fill: "rgb(255, 213, 0)",
             speed: 1,
         }),
-        Gear({
-            x: 1600,
-            y: 770,
-            teeth: 20,
-            inner: 630,
-            outer: 700,
-            angle: 0,
-            fill: "#001022",
-            speed: -1,
-        }),
+        // right yellow gear
         Gear({
             x: 2610,
             y: 770,
@@ -37,16 +28,7 @@ const main = () => {
             fill: "rgb(255, 213, 0)",
             speed: -1,
         }),
-        Gear({
-            x: 2610,
-            y: 770,
-            teeth: 10,
-            inner: 170,
-            outer: 230,
-            angle: 9,
-            fill: "#001022",
-            speed: 1,
-        }),
+        // left yellow gear
         Gear({
             x: 590,
             y: 770,
@@ -56,16 +38,6 @@ const main = () => {
             angle: 9,
             fill: "rgb(255, 213, 0)",
             speed: -1,
-        }),
-        Gear({
-            x: 590,
-            y: 770,
-            teeth: 10,
-            inner: 170,
-            outer: 230,
-            angle: 9,
-            fill: "#001022",
-            speed: 1,
         }),
     ];
     let last = 0;
@@ -76,6 +48,12 @@ const main = () => {
         context.clearRect(0, 0, 3200, 1600);
         gears.forEach((gear) => {
             gear.draw(context);
+            // holes
+            context.beginPath();
+            context.arc(gear.x, gear.y, gear.inner - 100, 0, Math.PI * 2);
+            context.closePath();
+            context.fillStyle = "#001022";
+            context.fill();
             gear.update(dt);
         });
         window.requestAnimationFrame(loop);
@@ -99,14 +77,8 @@ const Gear = (gear) => {
                 }
             }
             context.closePath();
-            if (this.fill) {
-                context.fillStyle = this.fill;
-                context.fill();
-                return;
-            }
-            if (this.stroke)
-                context.strokeStyle = this.stroke;
-            context.stroke();
+            context.fillStyle = this.fill;
+            context.fill();
         },
         update(dt) {
             this.angle += 200 * (this.speed / this.teeth) * dt;
