@@ -23,11 +23,14 @@
     <link rel="shortcut icon" href="./images/phoenix.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/style.css" />
 
+    <!-- SCRIPTS -->
+    <script type="module" src="./js/gears.js" defer></script>
+    <script type="module" src="./js/dates.js" defer></script>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="container navbar navbar-expand-md">
         <div class="container-fluid main-nav">
             <!-- Trinity Phoenix Logo -->
             <a href="#" class="navbar-brand">
@@ -70,8 +73,6 @@
         <!-- Main Image -->
         <div class="center column" id="home-image">
             <div id="gears"></div>
-            <script src="./js/gears.js" defer></script>
-
             <img src="./images/tiger.png" alt="Trinity Tiger by Nancy Chen" class="rounded img-fluid" />
             <h2><b>Perpetually Rising</b></h2>
             <p>drawing by Nancy Chen</p>
@@ -106,22 +107,28 @@
             </div>
 
             <div class="row center-text">
-                <div class="col">
-                    <h3>Dates</h3>
-                    <div class="container row">
-                        <div class="col">
-                            <p>September 6</p>
-                        </div>
-                        <div class="col">
-                            <p>First day of school</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <h3>Updates</h3>
-                    <p>Exclusive access to Road Runner Plus secured ;)</p>
-                    <p>Trinventory nears completion!</p>
-                </div>
+                <h3>Dates</h3>
+                <div class="container row" id="dates"></div>
+            </div>
+            <style>
+                #dates {
+                    overflow-x: scroll;
+                }
+
+                tr {
+                    border-bottom: 1px dotted white;
+                }
+                
+                tr p {
+                    margin-top: 1rem !important;
+                }
+
+            </style>
+
+            <div class="row center">
+                <h3>Updates</h3>
+                <p>Exclusive access to Road Runner Plus secured ;)</p>
+                <p>Trinventory nears completion!</p>
             </div>
         </div>
     </main>

@@ -6,12 +6,6 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(245, 204, 0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 :root {
     --background-color: #001022;
     --text-accent: rgb(255, 213, 0);
@@ -45,6 +39,14 @@ img {
     max-width: min(100%, 1000px) !important;
 }
 
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    margin: 1rem !important;
+}
+
 .navbar-nav {
     margin-left: auto;
 }
@@ -64,7 +66,4 @@ img {
     text-align: center;
 }
 
-ul {
-    list-style: none;
-}
 

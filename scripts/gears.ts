@@ -1,4 +1,4 @@
-const main = () => {
+const animateHome = () => {
     const container = document.querySelector("#gears") as HTMLElement;
     const canvas = createCanvas(container, 1600, 800);
     const context = canvas.getContext("2d");
@@ -8,19 +8,17 @@ const main = () => {
         // center yellow gear
         Gear({
             x: 1600,
-            y: 770,
+            y: 800,
             teeth: 20,
             inner: 700,
             outer: 770,
-            angle: 0,
             fill: "rgb(255, 213, 0)",
-            speed: 1,
         }),
 
-        // right yellow gear
+        // left yellow gear
         Gear({
-            x: 2610,
-            y: 770,
+            x: 590,
+            y: 800,
             teeth: 10,
             inner: 230,
             outer: 290,
@@ -29,10 +27,10 @@ const main = () => {
             speed: -1,
         }),
 
-        // left yellow gear
+        // right yellow gear
         Gear({
-            x: 590,
-            y: 770,
+            x: 2610,
+            y: 800,
             teeth: 10,
             inner: 230,
             outer: 290,
@@ -51,21 +49,14 @@ const main = () => {
         context.clearRect(0, 0, 3200, 1600);
         gears.forEach((gear) => {
             gear.draw(context);
-
-            // holes
-            context.beginPath();
-            context.arc(gear.x, gear.y, gear.inner - 100, 0, Math.PI * 2);
-            context.closePath();
-
-            context.fillStyle = "#001022";
-            context.fill();
-
+            gear.drawHole(context, 100, "#001022");
             gear.update(dt);
         });
 
         window.requestAnimationFrame(loop);
     };
     loop(0);
+
 };
 
 const Gear = (gear: {
@@ -74,11 +65,14 @@ const Gear = (gear: {
     teeth: number;
     inner: number;
     outer: number;
-    angle: number;
-    speed: number;
+    angle?: number;
+    speed?: number;
     fill: string;
 }) => {
     return {
+        speed: 1,
+        angle: 0,
+
         ...gear,
         draw(context: CanvasRenderingContext2D) {
             const step = (Math.PI * 2) / this.teeth;
@@ -97,6 +91,14 @@ const Gear = (gear: {
 
             context.closePath();
             context.fillStyle = this.fill;
+            context.fill();
+        },
+        
+        drawHole(context: CanvasRenderingContext2D, width: number, color: string) {
+            context.beginPath();
+            context.arc(this.x, this.y, this.inner - width, 0, Math.PI * 2);
+            context.closePath();
+            context.fillStyle = color; 
             context.fill();
         },
 
@@ -125,7 +127,7 @@ const createCanvas = (
     return canvas;
 };
 
-main();
+animateHome();
 
 // /\__/\
 // (=o.o=)
