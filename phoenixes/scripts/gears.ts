@@ -56,7 +56,6 @@ const animateHome = () => {
         window.requestAnimationFrame(loop);
     };
     loop(0);
-
 };
 
 const Gear = (gear: {
@@ -68,45 +67,45 @@ const Gear = (gear: {
     angle?: number;
     speed?: number;
     fill: string;
-}) => {
-    return {
-        speed: 1,
-        angle: 0,
+}) => ({
+    speed: 1,
+    angle: 0,
 
-        ...gear,
-        draw(context: CanvasRenderingContext2D) {
-            const step = (Math.PI * 2) / this.teeth;
-            const quarter = step / 4;
-            const start = (this.angle / 180) * Math.PI;
+    ...gear,
+    draw(context: CanvasRenderingContext2D) {
+        const step = (Math.PI * 2) / this.teeth;
+        const quarter = step / 4;
+        const start = (this.angle / 180) * Math.PI;
 
-            context.beginPath();
-            for (let i = 0; i < this.teeth; i++) {
-                for (let j = 0; j < 4; j++) {
-                    const radius = j < 2 ? this.outer : this.inner;
-                    const dx = Math.cos(start + step * i + quarter * j) * radius + this.x;
-                    const dy = Math.sin(start + step * i + quarter * j) * radius + this.y;
-                    context.lineTo(dx, dy);
-                }
+        context.beginPath();
+        for (let i = 0; i < this.teeth; i++) {
+            for (let j = 0; j < 4; j++) {
+                const radius = j < 2 ? this.outer : this.inner;
+                const dx =
+                    Math.cos(start + step * i + quarter * j) * radius + this.x;
+                const dy =
+                    Math.sin(start + step * i + quarter * j) * radius + this.y;
+                context.lineTo(dx, dy);
             }
+        }
 
-            context.closePath();
-            context.fillStyle = this.fill;
-            context.fill();
-        },
-        
-        drawHole(context: CanvasRenderingContext2D, width: number, color: string) {
-            context.beginPath();
-            context.arc(this.x, this.y, this.inner - width, 0, Math.PI * 2);
-            context.closePath();
-            context.fillStyle = color; 
-            context.fill();
-        },
+        context.closePath();
+        context.fillStyle = this.fill;
+        context.fill();
+    },
 
-        update(dt: number) {
-            this.angle += 200 * (this.speed / this.teeth) * dt;
-        },
-    };
-};
+    drawHole(context: CanvasRenderingContext2D, width: number, color: string) {
+        context.beginPath();
+        context.arc(this.x, this.y, this.inner - width, 0, Math.PI * 2);
+        context.closePath();
+        context.fillStyle = color;
+        context.fill();
+    },
+
+    update(dt: number) {
+        this.angle += 200 * (this.speed / this.teeth) * dt;
+    },
+});
 
 const createCanvas = (
     container: HTMLElement,
